@@ -1,0 +1,1807 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: "poppins", serif;
+}
+
+:root {
+    --black-color: #1e1e1e;
+    --black1-color: #000000;
+    --font-color: #838080;
+    --golden-color: #fcae1e;
+    /* --golden-color: #FFA500; */
+    --white-color: #FFFFFF;
+    --pink-color: #fc6a03;
+
+    --font-family: "Dancing Script", serif;
+}
+
+html {
+    font-size: 60.6%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--black1-color);
+    color: var(--font-color);
+    display: flex;
+    max-width: 1440px;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/*header*/
+#home {
+    height: 100vh;
+    width: 100%;
+    background-color: #000000;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#home .png {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    background-image: url(photo/slider9.jpg);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: changepng 25s infinite ease-in-out;
+}
+
+@keyframes changepng {
+    0% {
+        background-image: url(photo/s04.jpg);
+    }
+
+    25% {
+        background-image: url(photo/s03.webp);
+    }
+
+    50% {
+        background-image: url(photo/s01.jpg);
+    }
+
+    75% {
+        background-image: url(photo/s02.jpg);
+    }
+
+    100% {
+        background-image: url(photo/s04.jpg);
+    }
+}
+
+.png .content {
+    position: relative;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.png .content h1 {
+    font: 400;
+    font-size: 9rem;
+    text-align: center;
+    padding: 0.8rem;
+    font-family: var(--font-family);
+    color: var(--white-color);
+    letter-spacing: 0.3rem;
+    animation: text1 3s 1;
+}
+
+.png .content p {
+    font: 500;
+    font-size: 3.8rem;
+    color: var(--white-color);
+    text-align: center;
+    padding: 1rem;
+    animation: text3 3s 1;
+}
+
+.png .content button {
+    padding: 1.5rem;
+    font-size: 2rem;
+    font: 300;
+    cursor: pointer;
+    border-radius: 4rem 4rem 4rem 4rem;
+    position: absolute;
+    top: 98%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    animation: text3 3s 1;
+}
+
+.png .content button a {
+    color: var(--black-color);
+    animation: text3 3s 1;
+}
+
+@keyframes text1 {
+    0% {
+        margin-bottom: -30rem;
+        letter-spacing: 2rem;
+    }
+
+    30% {
+        letter-spacing: 1.5rem;
+        margin-bottom: -30rem;
+    }
+
+    60% {
+        letter-spacing: 1.5rem;
+        margin-bottom: -30rem;
+    }
+}
+
+@keyframes text3 {
+    0% {
+        color: transparent;
+        background-color: transparent;
+        letter-spacing: 1rem;
+    }
+
+    40% {
+        color: transparent;
+        background-color: transparent;
+        letter-spacing: 1rem;
+    }
+
+    70% {
+        color: transparent;
+        background-color: transparent;
+        letter-spacing: 1rem;
+    }
+}
+
+header {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 1rem 4% 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header.sticky {
+    background-color: var(--black-color);
+}
+
+header ul #ola {
+    background-color: var(--golden-color);
+}
+
+.logo img {
+    width: 12vw;
+    height: auto;
+    background-color: transparent;
+}
+
+#nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#nav ul li {
+    display: inline;
+    text-decoration: none;
+    font-weight: 300;
+    cursor: pointer;
+    padding: 5.6rem 2rem 4.3rem 2rem;
+}
+
+#nav ul li a {
+    color: var(--black-color);
+    font-size: 2.6rem;
+    font-weight: 600;
+}
+
+header.sticky #nav ul li a {
+    color: var(--white-color);
+    font-weight: 600;
+}
+
+header.sticky #nav ul li a:hover {
+    color: var(--pink-color);
+}
+
+.menu-icon {
+    /* display: none; */
+    cursor: pointer;
+}
+
+.menu-icon i {
+    color: var(--pink-color);
+    font-size: 3rem;
+}
+
+/* dropdown menu  */
+
+.dropdown-menu {
+    display: none;
+    position: fixed;
+    right: -10rem;
+    top: 90px;
+    height: 240px;
+    width: 0px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown-menu.active {
+    width: 300px;
+}
+
+.dropdown-menu li {
+    padding: 1.4rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 8rem;
+}
+
+.dropdown-menu li a {
+    color: var(--text-color);
+    font-size: 3rem;
+}
+
+.dropdown-menu li a:hover {
+    color: var(--back-color);
+    border-bottom: 2px solid var(--back-color);
+}
+
+/* welcome */
+
+#welcome {
+    margin-top: 5rem;
+    /* background-image:linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)), url(photo/b2.jpg); */
+    background-position: center;
+    background-size: cover;
+}
+
+#welcome h1 {
+    font-size: 5rem;
+    margin-top: 4rem;
+    padding: 6rem;
+    font: 300;
+    text-align: center;
+    color: var(--white-color);
+}
+
+#welcome h1::after {
+    content: "";
+    height: 2px;
+    width: 42rem;
+    background-color: var(--golden-color);
+    display: block;
+    margin: auto;
+}
+
+#welcome .wel-div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: 300px;
+    gap: 8rem;
+    grid-auto-flow: dense;
+    padding: 3rem 8rem;
+}
+
+#welcome .wel-div .info {
+    font-size: 2.5rem;
+    text-align: justify;
+    font: 400;
+}
+
+#welcome .wel-div .info span {
+    color: var(--golden-color);
+    font: 900;
+    font-size: 6.1rem;
+    font-family: var(--font-family);
+}
+
+#welcome .wel-div .img {
+    background-image: url(photo/w1.jpg);
+    background-position: bottom;
+    background-size: cover;
+    cursor: pointer;
+    transition: 1s;
+}
+
+#welcome .wel-div .img img {
+    width: 200px;
+    overflow: hidden;
+}
+
+#welcome .wel-div .img .img1 {
+    position: relative;
+    top: 22%;
+    left: 22%;
+    transform: translate(-50%, -50%);
+    transition: 1s;
+    width: 250px;
+}
+
+#welcome .wel-div .img .img1::after {
+    position: absolute;
+    content: '';
+    width: 70px;
+    height: 70px;
+    bottom: -3px;
+    left: -6px;
+    z-index: -1;
+    background-color: var(--pink-color);
+}
+
+#welcome .wel-div .img .img1::before {
+    position: absolute;
+    content: '';
+    width: 70px;
+    height: 70px;
+    top: -5px;
+    right: 44px;
+    z-index: -1;
+    background-color: var(--pink-color);
+}
+
+#welcome .wel-div .img .img2 {
+    position: relative;
+    top: 50%;
+    left: 113%;
+    transform: c;
+    transform: translate(-50%, -50%);
+}
+
+#welcome .wel-div .img .img2::after {
+    position: absolute;
+    content: '';
+    width: 70px;
+    height: 70px;
+    bottom: -3px;
+    left: -6px;
+    z-index: -1;
+    background-color: var(--pink-color);
+}
+
+#welcome .wel-div .img .img2::before {
+    position: absolute;
+    content: '';
+    width: 70px;
+    height: 70px;
+    top: -6px;
+    left: 136px;
+    z-index: -1;
+    background-color: var(--pink-color);
+}
+
+/* service */
+
+#service {
+    margin: 5rem 0;
+}
+
+#service h1 {
+    font-size: 5rem;
+    margin-top: 4rem;
+    padding: 6rem;
+    font: 300;
+    text-align: center;
+    color: var(--white-color);
+}
+
+#service h1::after {
+    content: "";
+    height: 2px;
+    width: 40rem;
+    background-color: var(--golden-color);
+    display: block;
+    margin: auto;
+}
+
+#service .Service-tank {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: 400px;
+    grid-auto-flow: dense;
+    overflow: hidden;
+}
+
+#service .all-service {
+    margin: 5rem;
+    box-shadow: 0 0 1rem 0 #aaa;
+    transition: 1s;
+    border-radius: 1rem 1rem 1rem 1rem;
+    background-position: center;
+    background-size: cover;
+}
+
+#service #wedding {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(photo/our1.jpeg);
+}
+
+#service #corporate {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(photo/our2.jpg);
+}
+
+#service #theme {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(photo/our3.jpg);
+}
+
+#service #fashion {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(photo/our4.jpg);
+}
+
+#service #music {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(photo/our5.jpg);
+}
+
+#service #annual {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(photo/our6.webp);
+}
+
+#service .all-service:hover {
+    box-shadow: 0 0 1rem 0rem #aaaaaa;
+    scale: 1.0;
+}
+
+#service .all-service:hover h2 {
+    color: var(--golden-color);
+    scale: 1.1;
+    text-align: center;
+}
+
+#service .all-service h2 {
+    font-size: 3rem;
+    font: 300;
+    margin-top: 6rem;
+    padding: 2rem 3rem;
+    text-align: center;
+    color: var(--golden-color);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#service .all-service .info {
+    font-size: 2rem;
+    font: 300;
+    padding: 3rem;
+    text-align: justify;
+    color: var(--white-color);
+}
+
+/* values */
+
+#values {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(photo/b2.webp);
+    background-position: center;
+    background-size: cover;
+    background-color: #000000;
+}
+
+#values h1 {
+    font-size: 5rem;
+    margin-top: 4rem;
+    padding-top: 4rem;
+    font: 300;
+    text-align: center;
+    color: var(--white-color);
+}
+
+#values h1::after {
+    content: "";
+    height: 2px;
+    width: 32rem;
+    background-color: var(--golden-color);
+    display: block;
+    margin: auto;
+}
+
+#values .arrow {
+    margin: 3rem 10rem;
+}
+
+#values .arrow .left {
+    font-size: 6rem;
+    cursor: pointer;
+    position: relative;
+    top: 33rem;
+    transform: translateY(-50%);
+    transform: translateX(-50%);
+    color: var(--pink-color);
+}
+
+#values .arrow .right {
+    font-size: 6rem;
+    cursor: pointer;
+    position: relative;
+    top: -31rem;
+    transform: translateY(-50%);
+    transform: translateX(-50%);
+    color: var(--pink-color);
+}
+
+.arrow .left {
+    left: 45%;
+}
+
+.arrow .right {
+    right: -150.5%;
+}
+
+#values .value-tank {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 3) - 12px);
+    gap: 6rem;
+    scroll-behavior: smooth;
+    overflow: hidden;
+    padding: 0 5rem;
+}
+
+#values .all-values {
+    width: 300px;
+    height: 400px;
+    padding: 4rem;
+    color: var(--font-color);
+    background-color: #000000aa;
+    border-radius: 3rem 3rem;
+    cursor: pointer;
+    transition: 1s;
+}
+
+#values .all-values:hover {
+    box-shadow: 0 0 1rem 0 #aaa;
+    border-radius: 3rem 3rem;
+}
+
+#values .all-values:hover .img {
+    color: var(--golden-color);
+    scale: 1.1;
+}
+
+#values .all-values:hover h2 {
+    color: var(--golden-color);
+    scale: 1.1;
+}
+
+#values .all-values .img {
+    color: var(--golden-color);
+    font-size: 14rem;
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#values .all-values h2 {
+    color: var(--white-color);
+    text-align: center;
+    padding: 2rem;
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+#values .all-values p {
+    color: var(--font-color);
+    font-size: 2rem;
+    text-align: center;
+    padding: 2rem;
+}
+
+/* our work  */
+
+#image h1 {
+    font-size: 5rem;
+    margin-top: 4rem;
+    padding: 4rem;
+    font: 300;
+    text-align: center;
+    color: var(--white-color);
+}
+
+#image h1::after {
+    content: "";
+    height: 2px;
+    width: 20rem;
+    background-color: var(--golden-color);
+    display: block;
+    margin: auto;
+}
+
+.image-slider {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: 250px;
+    grid-auto-flow: dense;
+    overflow: hidden;
+    padding: 3rem;
+}
+
+.image-slider .img-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-slider img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Testimonials / clients speak */
+
+#client-speak {
+    margin: 6rem 8rem;
+    background-image: url(photo/b1.avif);
+    background-position: center;
+    background-size: cover;
+}
+
+.client-slider {
+    position: relative;
+    width: 500%;
+    height: 700%;
+    display: block;
+    background-position: center;
+    animation: 20s slide infinite;
+}
+
+@keyframes slide {
+    0% {
+        left: 0;
+    }
+
+    30% {
+        left: 0;
+    }
+
+    34% {
+        left: -100%;
+    }
+
+    64% {
+        left: -100%;
+    }
+
+    68% {
+        left: -200%;
+    }
+
+    98% {
+        left: -200%;
+    }
+
+    100% {
+        left: -300%;
+    }
+
+}
+
+.client-slider .content {
+    float: left;
+    height: 210px;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20rem;
+}
+
+.client-slider .content img {
+    width: 40px;
+}
+
+.client-slider .content h3 {
+    text-align: center;
+    font-size: 4rem;
+    padding: 0.6rem;
+    color: var(--white-color);
+}
+
+.client-slider .content h6 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.client-slider .content p {
+    font-size: 1.7rem;
+    text-align: center;
+    padding: 0.6rem;
+}
+
+.client-slider .content span {
+    font-size: 1.8rem;
+    text-align: center;
+    color: var(--pink-color);
+}
+
+/* footer  */
+
+#footer {
+    background-color: var(--black-color);
+}
+
+#footer .footer-slide {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-rows: 180px;
+    gap: 8.2rem;
+    padding: 6rem;
+    overflow: hidden;
+}
+
+#footer .footer-slide #list {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* background-color: #fc6a03; */
+}
+
+#footer .footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#footer .footer-logo img {
+    width: 28rem;
+}
+
+#footer .list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#footer .list li {
+    display: flex;
+    padding: 0.3rem;
+    text-align: center;
+}
+
+#footer .list li a {
+    color: var(--white-color);
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+#footer .address {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#footer .address p {
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 0.6rem;
+    color: var(--white-color);
+}
+
+#footer .footer-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#footer .footer-icon .i {
+    display: flex;
+    flex-direction: row;
+}
+
+#footer .footer-icon i {
+    font-size: 4rem;
+    padding: 0.6rem 1.8rem;
+    color: var(--golden-color);
+}
+
+#footer .list h1,
+.address h1,
+.footer-icon h1 {
+    font-size: 2.5rem;
+    padding: 1rem;
+    color: var(--white-color);
+}
+
+#footer #copy {
+    color: var(--white-color);
+    font-size: 3rem;
+    text-align: center;
+    background-color: var(--pink-color);
+}
+
+
+/* media quary */
+
+@media (max-width: 992px) {
+    #nav ul #ola1 {
+        display: none;
+    }
+
+    #nav ul #ola {
+        display: none;
+    }
+
+    .dropdown-menu {
+        display: block;
+    }
+
+    .logo img {
+        width: 18vw;
+    }
+
+    .menu-icon {
+        cursor: pointer;
+        color: var(--pink-color);
+    }
+}
+
+
+@media (max-width: 480px) {
+    .png .content h1 {
+        font-size: 5rem;
+    }
+
+    .png .content p {
+        font-size: 2.6rem;
+    }
+
+    .png .content button {
+        padding: 1rem;
+        font-size: 2rem;
+    }
+
+    .png .content {
+        top: 66%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .png .content button a {
+        font-size: 1.4rem;
+    }
+
+    .logo img {
+        width: 28vw;
+    }
+
+    #welcome {
+        margin-top: 4rem;
+    }
+
+    #welcome h1 {
+        font-size: 4rem;
+        padding: 2.5rem;
+    }
+
+    #welcome h1::after {
+        width: 36rem;
+    }
+
+    #welcome .wel-div {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-auto-rows: 270px;
+        gap: 0rem;
+        padding: 3rem 1.8rem;
+    }
+
+    #welcome .wel-div .info {
+        font-size: 2rem;
+    }
+
+    #welcome .wel-div .info span {
+        font-size: 5.1rem;
+    }
+
+    #welcome .wel-div .img img {
+        width: 200px;
+    }
+
+    #welcome .wel-div .img .img1 {
+        display: none;
+    }
+
+    #welcome .wel-div .img .img2 {
+        top: 310px;
+        left: 240px;
+    }
+
+    #welcome .wel-div .img .img2::before {
+        background-color: transparent;
+    }
+
+    #service {
+        margin-top: 4rem;
+        padding: 0 2rem;
+    }
+
+    #service h1 {
+        font-size: 4rem;
+    }
+
+    #service h1::after {
+        width: 38rem;
+    }
+
+    #service .Service-tank {
+        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        grid-auto-rows: 400px;
+    }
+
+    #service .all-service {
+        box-shadow: 0 0 0 0 #FFFFFF;
+    }
+
+    #values h1 {
+        font-size: 4rem;
+    }
+
+    #values h1::after {
+        width: 29rem;
+    }
+
+    #values .arrow {
+        margin: 2rem 12rem;
+        padding: 0 1rem;
+    }
+
+    #values .arrow .left {
+        top: 28rem;
+    }
+
+    #values .arrow .right {
+        top: -26.6rem;
+    }
+
+    .arrow .left {
+        left: 34%;
+    }
+
+    .arrow .right {
+        right: -152%;
+    }
+
+    #values .value-tank {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: calc((100% / 1) - 6.4rem);
+        gap: 4.6rem;
+        scroll-behavior: smooth;
+        overflow: hidden;
+        padding: 0 0.5rem;
+    }
+
+    #values .all-values {
+        width: 260px;
+        padding: 2rem;
+        height: 330px;
+        margin: 0 6%;
+    }
+
+    #values .all-values .img {
+        padding: 2rem;
+        font-size: 10rem;
+    }
+
+    #values .all-values h2 {
+        padding: 1rem;
+        font-size: 3rem;
+    }
+
+    #values .all-values:hover {
+        box-shadow: 0 0 1rem 0 #000000;
+        scale: 1;
+        border-radius: 3rem 3rem;
+    }
+
+    #image h1 {
+        font-size: 4rem;
+    }
+
+    #image h1::after {
+        width: 14rem;
+    }
+
+    #client-speak {
+        margin: 5rem 3rem;
+    }
+
+    .client-slider .content {
+        padding: 0 5rem;
+    }
+
+    .client-slider .content img {
+        width: 30px;
+    }
+
+    .client-slider .content h3 {
+        font-size: 2rem;
+    }
+
+    .client-slider .content h6 {
+        font-size: 2rem;
+    }
+
+    .client-slider .content p {
+        font-size: 1rem;
+    }
+
+    .client-slider .content span {
+        font-size: 1.5rem;
+    }
+
+    #footer .footer-slide {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        grid-template-rows: 100px;
+        gap: 3rem;
+        padding: 4rem;
+    }
+
+    #footer .footer-logo img{
+        width: 18rem;
+    }
+    #footer .footer-icon i {
+        font-size: 4rem;
+    }
+
+    #footer .list h1,
+    .address h1,
+    .footer-icon h1 {
+        font-size: 2rem;
+    }
+
+    #footer .footer-slide p {
+        font-size: 1.4rem;
+    }
+
+    #footer .list li a {
+        font-size: 1.4rem;
+    }
+
+    #footer #copy {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 430px) {
+    .png .content h1 {
+        font-size: 5rem;
+    }
+
+    .png .content p {
+        font-size: 2.6rem;
+    }
+
+    .png .content button {
+        padding: 1rem;
+    }
+
+    .png .content {
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .png .content button a {
+        font-size: 1.4rem;
+    }
+
+    .logo img {
+        width: 28vw;
+    }
+
+    #welcome {
+        margin-top: 4rem;
+    }
+
+    #welcome h1 {
+        font-size: 4rem;
+        padding: 2.5rem;
+    }
+
+    #welcome h1::after {
+        width: 36rem;
+    }
+
+    #welcome .wel-div {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-auto-rows: 270px;
+        gap: 0rem;
+        padding: 3rem 1.8rem;
+    }
+
+    #welcome .wel-div .info {
+        font-size: 2rem;
+    }
+
+    #welcome .wel-div .info span {
+        font-size: 4.5rem;
+    }
+
+    #welcome .wel-div .img img {
+        width: 160px;
+    }
+
+    #welcome .wel-div .img .img1 {
+        display: none;
+    }
+
+    #welcome .wel-div .img .img2 {
+        top: 310px;
+        left: 200px;
+    }
+
+    #welcome .wel-div .img .img2::before {
+        background-color: transparent;
+    }
+
+    #service {
+        margin-top: 4rem;
+        padding: 0 2rem;
+    }
+
+    #service h1 {
+        font-size: 4rem;
+    }
+
+    #service h1::after {
+        width: 38rem;
+    }
+
+    #service .all-service h2 {
+        font-size: 2.8rem;
+        padding: 1.6rem;
+    }
+
+    #service .all-service .info {
+        font-size: 2rem;
+    }
+
+    #service .Service-tank {
+        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        grid-auto-rows: 400px;
+    }
+
+    #service .all-service {
+        box-shadow: 0 0 0 0 #FFFFFF;
+    }
+
+    #values h1 {
+        font-size: 4rem;
+    }
+
+    #values h1::after {
+        width: 29rem;
+    }
+
+    #values .arrow {
+        margin: 2rem 8.8rem 2rem 8.8rem;
+    }
+
+    #values .arrow .left {
+        top: 28rem;
+    }
+
+    #values .arrow .right {
+        top: -26.6rem;
+    }
+
+    .arrow .left {
+        left: 34%;
+    }
+
+    .arrow .right {
+        right: -152%;
+    }
+
+    #values .value-tank {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: calc((100% / 1) - 5rem);
+        gap: 3.8rem;
+        scroll-behavior: smooth;
+        overflow: hidden;
+    }
+
+    #values .all-values {
+        width: 260px;
+        padding: 2rem;
+        height: 330px;
+        margin: 0 6%;
+    }
+
+    #values .all-values .img {
+        padding: 2rem;
+        font-size: 10rem;
+    }
+
+    #values .all-values h2 {
+        padding: 1rem;
+        font-size: 3rem;
+    }
+
+    #values .all-values:hover {
+        box-shadow: 0 0 1rem 0 #000000;
+        scale: 1;
+        border-radius: 3rem 3rem;
+    }
+
+    #image h1 {
+        font-size: 4rem;
+    }
+
+    #image h1::after {
+        width: 14rem;
+    }
+
+    #client-speak {
+        margin: 5rem 3rem;
+    }
+
+    .client-slider .content {
+        padding: 0 5rem;
+    }
+
+    .client-slider .content img {
+        width: 30px;
+    }
+
+    .client-slider .content h3 {
+        font-size: 2rem;
+    }
+
+    .client-slider .content h6 {
+        font-size: 2rem;
+    }
+
+    .client-slider .content p {
+        font-size: 1rem;
+    }
+
+    .client-slider .content span {
+        font-size: 1.5rem;
+    }
+
+    #footer .footer-slide {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        grid-template-rows: 100px;
+        gap: 3rem;
+        padding: 4rem;
+    }
+
+    #footer .footer-icon i {
+        font-size: 4rem;
+    }
+
+    #footer .list h1,
+    .address h1,
+    .footer-icon h1 {
+        font-size: 2rem;
+    }
+
+    #footer .footer-slide p {
+        font-size: 1.4rem;
+    }
+
+    #footer .list li a {
+        font-size: 1.4rem;
+    }
+
+    #footer #copy {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 415px) {
+    #welcome .wel-div .info span {
+        font-size: 4.3rem;
+    }
+
+    #service .all-service {
+        box-shadow: 0 0 0 0 #FFFFFF;
+    }
+
+    #values .arrow {
+        margin: 2rem 8rem;
+    }
+
+    #values .value-tank {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: calc((100% / 1) - 2.8rem);
+        gap: 2rem;
+        scroll-behavior: smooth;
+        overflow: hidden;
+    }
+
+    #values .all-values {
+        margin: 0 5%;
+    }
+}
+
+@media (max-width: 394px) {
+    #welcome .wel-div .info span {
+        font-size: 4rem;
+    }
+
+    #service h1 {
+        font-size: 3.6rem;
+    }
+
+    #service h1::after {
+        width: 34rem;
+    }
+
+    #service .Service-tank {
+        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        grid-auto-rows: 410px;
+    }
+
+    #values .arrow {
+        margin: 2rem 7rem 2rem 7rem;
+    }
+
+    #values .value-tank {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: calc((100% / 1) - 1rem);
+        gap: 1.6rem;
+        scroll-behavior: smooth;
+        overflow: hidden;
+    }
+
+    #values .all-values {
+        margin: 0 2%;
+    }
+}
+
+/* @media (max-width: 376px) {
+    #welcome .wel-div .info span {
+        font-size: 1rem;
+    }
+
+    #service {
+        padding: 2rem;
+    }
+
+    #service h1 {
+        font-size: 3.3rem;
+    }
+
+    #service h1::after {
+        width: 30rem;
+    }
+
+    #service .Service-tank {
+        gap: 1px;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        grid-auto-rows: 430px;
+    }
+
+    #service .all-service h2 {
+        font-size: 2.8rem;
+        padding: 1.6rem;
+    }
+
+    #service .all-service .info {
+        font-size: 2rem;
+    }
+
+    #values .arrow {
+        margin: 2rem 5rem;
+        padding: 0 1rem;
+    }
+
+    #values .arrow .left {
+        top: 28rem;
+    }
+
+    #values .arrow .right {
+        top: -26.6rem;
+    }
+
+    .arrow .left {
+        left: 36%;
+    }
+
+    .arrow .right {
+        right: -148.6%;
+    }
+
+    #values .value-tank {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: calc((100% / 1) - 4rem);
+        gap: 3rem;
+        scroll-behavior: smooth;
+        overflow: hidden;
+    }
+
+    #values .all-values {
+        margin: 0 5%;
+    }
+} */
+
+@media (max-width: 376px) {
+    #nav ul #ola1 {
+        display: none;
+    }
+
+    #nav ul #ola {
+        display: none;
+    }
+
+    .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown-menu.active {
+        width: 450px;
+    }
+    .dropdown-menu li {
+        padding: 0.6rem;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding-left: 30%;
+    }
+    .dropdown-menu li a{
+        font-size: 2rem;
+        color: var(--white-color);
+    }
+    .png .content h1 {
+        font-size: 4rem;
+    }
+
+    .png .content p {
+        font-size: 2rem;
+    }
+
+    .png .content button {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+
+    .logo img {
+        width: 35vw;
+    }
+
+    #welcome h1 {
+        font-size: 2.8rem;
+    }
+
+    #welcome h1::after {
+        width: 23rem;
+    }
+
+    #welcome .wel-div {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-auto-rows: 290px;
+        gap: 0rem;
+        padding: 3rem 1.8rem;
+    }
+
+    #welcome .wel-div .info span {
+        font-size: 2.7rem;
+    }
+
+    #welcome .wel-div .info {
+        font-size: 1.6rem;
+    }
+
+    #welcome .wel-div .img .img2 {
+        top: 310px;
+        left: 170px;
+    }
+
+    #service h1 {
+        font-size: 2.8rem;
+        padding: 4rem 0rem;
+    }
+
+    #service h1::after {
+        width: 23rem;
+    }
+
+    #service .all-service .info {
+        padding: 0.8rem;
+        font-size: 1.4rem;
+    }
+
+    #service .all-service h2 {
+        font-size: 1.8rem;
+        margin: 3.4rem 0 1rem 0;
+    }
+
+    #service .Service-tank {
+        gap: 0.2rem;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        grid-auto-rows: 420px;
+    }
+
+    #values h1 {
+        font-size: 2.8rem;
+    }
+
+    #values h1::after {
+        width: 18rem;
+    }
+
+    #values .arrow {
+        margin: 2rem 6rem;
+    }
+
+    #values .arrow .left {
+        top: 20rem;
+        font-size: 5rem;
+    }
+
+    #values .arrow .right {
+        top: -19rem;
+        font-size: 5rem;
+    }
+
+    .arrow .left {
+        left: 25%;
+    }
+
+    .arrow .right {
+        right: -154%;
+    }
+
+    #values .all-values {
+        width: 220px;
+        padding: 2rem;
+        height: 300px;
+        margin: 0 0.8%;
+    }
+
+    #values .value-tank {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: calc((100% / 1) - 1rem);
+        gap: 2rem;
+        scroll-behavior: smooth;
+        overflow: hidden;
+    }
+
+    #values .all-values .img {
+        font-size: 6rem;
+    }
+
+    #values .all-values h2 {
+        font-size: 2rem;
+    }
+
+    #values .all-values p {
+        font-size: 1.2rem;
+        padding: 1rem;
+    }
+
+    #image h1 {
+        font-size: 2.8rem;
+    }
+
+    #image h1::after {
+        width: 10rem;
+    }
+
+    .client-slider .content {
+        padding: 0 2rem;
+    }
+
+    .client-slider .content img {
+        width: 25px;
+    }
+
+    .client-slider .content h3 {
+        font-size: 1.5rem;
+    }
+
+    .client-slider .content h6 {
+        font-size: 1rem;
+    }
+
+    .client-slider .content p {
+        font-size: 0.9rem;
+    }
+    #footer .footer-icon i {
+        font-size: 4rem;
+    }
+
+    #footer .list h1,
+    .address h1,
+    .footer-icon h1 {
+        font-size: 1.6rem;
+    }
+
+    #footer .footer-slide p {
+        font-size: 1.2rem;
+    }
+
+    #footer .list li a {
+        font-size: 1.2rem;
+    }
+
+    #footer #copy {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 344px) {
+    #welcome h1 {
+        font-size: 1rem;
+        padding: 2.5rem;
+    }
+
+    #welcome h1::after {
+        width: 26rem;
+    }
+
+    #welcome .wel-div .info span {
+        font-size: 3.5rem;
+    }
+
+    #welcome .wel-div {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-auto-rows: 272px;
+        gap: 0rem;
+        padding: 3rem 1.8rem;
+    }
+
+    #service h1 {
+        font-size: 2.8rem;
+    }
+
+    #service h1::after {
+        width: 26rem;
+    }
+
+    #service .Service-tank {
+        gap: 1px;
+        grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+        grid-auto-rows: 395px;
+    }
+
+    #values .arrow {
+        margin: 2rem 4rem 2rem 4rem;
+    }
+
+    #values .arrow .left {
+        font-size: 5.6rem;
+        top: 28rem;
+    }
+
+    #values .arrow .right {
+        top: -25.6rem;
+        font-size: 5.6rem;
+    }
+
+    .arrow .left {
+        left: 41%;
+    }
+
+    .arrow .right {
+        right: -144.6%;
+    }
+
+    #values .value-tank {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: calc((100% / 1) - 7rem);
+        gap: 7rem;
+        scroll-behavior: smooth;
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 320px) {
+    #welcome h1 {
+        font-size: 3rem;
+        padding: 2.5rem;
+    }
+
+    #welcome h1::after {
+        width: 26rem;
+    }
+
+    #welcome .wel-div {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-auto-rows: 270px;
+        gap: 0rem;
+        padding: 3rem 1.8rem;
+    }
+
+    #welcome .wel-div .info {
+        font-size: 1.9rem;
+    }
+
+    #welcome .wel-div .info span {
+        font-size: 3.3rem;
+    }
+
+    #service {
+        padding: 1rem;
+    }
+
+    #service h1 {
+        font-size: 2.8rem;
+    }
+
+    #service h1::after {
+        width: 26rem;
+    }
+
+    #service .Service-tank {
+        gap: 1px;
+        grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+        grid-auto-rows: 400px;
+    }
+
+    #service .all-service .info {
+        padding: 1rem;
+        font-size: 1.9rem;
+    }
+
+    #values .arrow {
+        margin: 2rem 4rem 2rem 4rem;
+    }
+
+    #values .arrow .left {
+        font-size: 5.6rem;
+        top: 28rem;
+    }
+
+    #values .arrow .right {
+        top: -25.6rem;
+        font-size: 5.6rem;
+    }
+
+    .arrow .left {
+        left: 41%;
+    }
+
+    .arrow .right {
+        right: -144.6%;
+    }
+
+    #values .value-tank {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: calc((100% / 1) - 7rem);
+        gap: 7rem;
+        scroll-behavior: smooth;
+        overflow: hidden;
+    }
+}
